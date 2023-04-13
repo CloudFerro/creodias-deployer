@@ -1,0 +1,52 @@
+{
+  "request": {
+    "url": "/ccds/solution/e3794e16-0225-4bf1-a99c-b99638a22232",
+    "method": "GET",
+    "basicAuth": {
+      "username": "ccds_client",
+      "password": "test"
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "created": "2021-12-08T09:56:11Z",
+      "modified": "2021-12-08T15:16:06Z",
+      "solutionId": "e3794e16-0225-4bf1-a99c-b99638a22232",
+      "name": "EntityRecognizer",
+      "metadata": null,
+      "active": true,
+      "modelTypeCode": "CL",
+      "toolkitTypeCode": "MN",
+      "origin": null,
+      "viewCount": 45,
+      "downloadCount": 5,
+      "lastDownload": null,
+      "ratingCount": 0,
+      "ratingAverageTenths": 0,
+      "featured": null,
+      "userId": "6d000a76-a811-4182-9992-5328661f4933",
+      "sourceId": null,
+      "tags": [
+        {
+          "tag": "nlp"
+        },
+        {
+          "tag": "Named Entity Recognition"
+        },
+        {
+          "tag": "Information Extraction"
+        },
+        {
+          "tag": "NER"
+        },
+        {
+          "tag": "ai4media"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

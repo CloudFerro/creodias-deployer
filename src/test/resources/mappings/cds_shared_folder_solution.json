@@ -1,0 +1,46 @@
+{
+  "request": {
+    "url": "/ccds/solution/b979dabb-b461-47ae-8459-37b3f4be8851",
+    "method": "GET",
+    "basicAuth": {
+      "username": "ccds_client",
+      "password": "test"
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "created": "2022-09-19T13:57:31Z",
+      "modified": "2022-09-19T14:02:03Z",
+      "solutionId": "b979dabb-b461-47ae-8459-37b3f4be8851",
+      "name": "news-training-pipeline",
+      "metadata": null,
+      "active": true,
+      "modelTypeCode": "PR",
+      "toolkitTypeCode": "CP",
+      "origin": null,
+      "viewCount": 5,
+      "downloadCount": 0,
+      "lastDownload": null,
+      "ratingCount": 0,
+      "ratingAverageTenths": 0,
+      "featured": null,
+      "userId": "d9e01c89-520f-42ef-8d83-00bf2cbf13ba",
+      "sourceId": null,
+      "tags": [
+        {
+          "tag": "pipeline"
+        },
+        {
+          "tag": "playground"
+        },
+        {
+          "tag": "news training pipeline"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

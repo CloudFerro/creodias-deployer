@@ -1,0 +1,26 @@
+server:
+  port: 8125
+  servlet:
+    context-path: /creodias-deployer
+
+common-data-service:
+  user: "ccds_client"
+  password: ""
+  url: "https://aiexp-dev.ai4europe.eu/ccds"
+
+nexus:
+  user: "acumos_rw"
+  password: ""
+  url: "http://aiexp-dev.ai4europe.eu:31692/repository/acumos_model_maven"
+
+blueprint:
+  ImageName: cicd.ai4eu-dev.eu:7444/generic-parallel-orchestrator/orchestrator_container:1.4
+  name: orchestrator
+
+jwt:
+  auth:
+    secret:
+      key: ""
+
+deployer:
+  podsReadyTimeout: 60s

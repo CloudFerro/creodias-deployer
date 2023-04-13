@@ -1,0 +1,46 @@
+{
+  "request": {
+    "url": "/ccds/solution/00aff3ab-94cb-4969-93c3-a95be53c05d2",
+    "method": "GET",
+    "basicAuth": {
+      "username": "ccds_client",
+      "password": "test"
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "created": "2021-05-06T20:12:15Z",
+      "modified": "2021-10-21T09:52:50Z",
+      "solutionId": "00aff3ab-94cb-4969-93c3-a95be53c05d2",
+      "name": "Sudoku Tutorial",
+      "metadata": null,
+      "active": true,
+      "modelTypeCode": "PR",
+      "toolkitTypeCode": "CP",
+      "origin": null,
+      "viewCount": 116,
+      "downloadCount": 23,
+      "lastDownload": null,
+      "ratingCount": 0,
+      "ratingAverageTenths": 0,
+      "featured": null,
+      "userId": "f0e94d3e-a3f2-4df8-8c78-d4b3fb753525",
+      "sourceId": null,
+      "tags": [
+        {
+          "tag": "Tutorial"
+        },
+        {
+          "tag": "Sudoku"
+        },
+        {
+          "tag": "hello world"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "/nexus/org/acumos/99a477a3-99ef-4ca9-a1e2-b21d520d554f/tensorboard/1.0.0/tensorboard-1.0.0.proto",
+    "method": "GET",
+    "basicAuth": {
+      "username": "acumos_rw",
+      "password": "test"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": "syntax = \"proto3\";\n\nmessage Empty {\n}\n\nmessage LoggingStatus {\n  int32 status = 1;\n}\n\nservice Tensorboard {\n  rpc loggging(Empty) returns(LoggingStatus);\n}\n",
+    "headers": {
+      "Content-Type": "text/plain"
+    }
+  }
+}

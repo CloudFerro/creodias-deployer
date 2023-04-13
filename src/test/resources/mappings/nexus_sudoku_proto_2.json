@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "/nexus/org/acumos/c9535d4a-50d9-4bf8-82b5-7694279717f5/sudoku-tutorial-design-evaluator/1.0.0/sudoku-tutorial-design-evaluator-1.0.0.proto",
+    "method": "GET",
+    "basicAuth": {
+      "username": "acumos_rw",
+      "password": "test"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": "syntax = \"proto3\";\n\n// package sudoku_design_evaluator;\n\nmessage KeyValuePair {\n  string key = 1;\n  string value = 2;\n}\n\nmessage Parameters {\n  int32 number_of_answers = 1;\n  bool return_only_optimal_answers = 2;\n  repeated KeyValuePair additional_parameters = 3;\n}\n\nmessage SolverJob {\n  // ASP Core-2 program\n  string program = 1;\n  Parameters parameters = 2;\n}\n\nmessage CostElement {\n  int32 level = 1;\n  int32 cost = 2;\n}\n\nmessage Answerset {\n  repeated string atoms = 1;\n  repeated CostElement costs = 2;\n  bool is_known_optimal = 3;\n}\n\nmessage ResultDescription {\n  bool success = 1;\n  int32 code = 2;\n  repeated string messages = 3;\n}\n\nmessage SolveResultAnswersets {\n  ResultDescription description = 1;\n  repeated Answerset answers = 2;\n}\n\nmessage SudokuDesignEvaluationJob {\n  // 0 means empty, 1-9 means the respective digit is in that field\n  // addressing is as follows: field[column+9*row]\n  // this field always has 81 elements\n  repeated int32 field = 1;\n}\n\nmessage SudokuDesignEvaluationResult {\n  // 0 = no solution\n  // 1 = unique solution\n  // 2 = multiple solutions\n  int32 status = 1;\n\n  // encoding as SudokuDesignEvaluationJob.field, present only if status = 1, all values are set to != 0\n  repeated int32 solution = 2;\n\n  // encoding as SudokuDesignEvaluationJob.field, present only if status = 0\n  // those field values which are involved in some way in an inconsistency and need to be considered for modification are set, all others are 0\n  repeated int32 inconsistency_involved = 3;\n}\n\nservice SudokuDesignEvaluator {\n  rpc evaluateSudokuDesign(SudokuDesignEvaluationJob) returns (SolverJob);\n  rpc processSolverResult(SolveResultAnswersets) returns(SudokuDesignEvaluationResult);\n}\n",
+    "headers": {
+      "Content-Type": "text/plain"
+    }
+  }
+}

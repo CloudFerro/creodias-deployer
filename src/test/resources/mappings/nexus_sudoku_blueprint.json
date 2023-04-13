@@ -1,0 +1,130 @@
+{
+  "request": {
+    "url": "/nexus/org/acumos/00aff3ab-94cb-4969-93c3-a95be53c05d2/0ef0dba6-7541-48ca-bd83-c14a7a1b1308/BLUEPRINT-00AFF3AB-94CB-4969-93C3-A95BE53C05D2/2/BLUEPRINT-00AFF3AB-94CB-4969-93C3-A95BE53C05D2-2.json",
+    "method": "GET",
+    "basicAuth": {
+      "username": "acumos_rw",
+      "password": "test"
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "name": "Sudoku Tutorial",
+      "version": "2",
+      "input_ports": [],
+      "nodes": [
+        {
+          "container_name": "aspsolver-clingo-oneshot1",
+          "node_type": "MLModel",
+          "image": "cicd.ai4eu-dev.eu:7444/tutorials/sudoku:aspsolver-1.2",
+          "proto_uri": "org/acumos/643fad67-cc9f-478a-9c8f-36ce2e25a53e/aspsolver-clingo-oneshot/1.0.0/aspsolver-clingo-oneshot-1.0.0.proto",
+          "operation_signature_list": [
+            {
+              "operation_signature": {
+                "operation_name": "solve",
+                "input_message_name": "SolverJob",
+                "input_message_stream": false,
+                "output_message_name": "SolveResultAnswersets",
+                "output_message_stream": false
+              },
+              "connected_to": [
+                {
+                  "container_name": "sudoku-tutorial-design-evaluator1",
+                  "operation_signature": {
+                    "operation_name": "processSolverResult"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "container_name": "sudoku-tutorial-design-evaluator1",
+          "node_type": "MLModel",
+          "image": "cicd.ai4eu-dev.eu:7444/tutorials/sudoku:evaluator-1.4",
+          "proto_uri": "org/acumos/c9535d4a-50d9-4bf8-82b5-7694279717f5/sudoku-tutorial-design-evaluator/1.0.0/sudoku-tutorial-design-evaluator-1.0.0.proto",
+          "operation_signature_list": [
+            {
+              "operation_signature": {
+                "operation_name": "processSolverResult",
+                "input_message_name": "SolveResultAnswersets",
+                "input_message_stream": false,
+                "output_message_name": "SudokuDesignEvaluationResult",
+                "output_message_stream": false
+              },
+              "connected_to": [
+                {
+                  "container_name": "sudoku-tutorial-gui1",
+                  "operation_signature": {
+                    "operation_name": "processEvaluationResult"
+                  }
+                }
+              ]
+            },
+            {
+              "operation_signature": {
+                "operation_name": "evaluateSudokuDesign",
+                "input_message_name": "SudokuDesignEvaluationJob",
+                "input_message_stream": false,
+                "output_message_name": "SolverJob",
+                "output_message_stream": false
+              },
+              "connected_to": [
+                {
+                  "container_name": "aspsolver-clingo-oneshot1",
+                  "operation_signature": {
+                    "operation_name": "solve"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "container_name": "sudoku-tutorial-gui1",
+          "node_type": "MLModel",
+          "image": "cicd.ai4eu-dev.eu:7444/tutorials/sudoku:gui-1.4",
+          "proto_uri": "org/acumos/49b701a0-b89e-4cfa-8160-40cf2311e0e6/sudoku-tutorial-gui/1.0.0/sudoku-tutorial-gui-1.0.0.proto",
+          "operation_signature_list": [
+            {
+              "operation_signature": {
+                "operation_name": "requestSudokuEvaluation",
+                "input_message_name": "Empty",
+                "input_message_stream": false,
+                "output_message_name": "SudokuDesignEvaluationJob",
+                "output_message_stream": false
+              },
+              "connected_to": [
+                {
+                  "container_name": "sudoku-tutorial-design-evaluator1",
+                  "operation_signature": {
+                    "operation_name": "evaluateSudokuDesign"
+                  }
+                }
+              ]
+            },
+            {
+              "operation_signature": {
+                "operation_name": "processEvaluationResult",
+                "input_message_name": "SudokuDesignEvaluationResult",
+                "input_message_stream": false,
+                "output_message_name": "Empty",
+                "output_message_stream": false
+              },
+              "connected_to": []
+            }
+          ]
+        }
+      ],
+      "probeIndicator": [
+        {
+          "value": "false"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

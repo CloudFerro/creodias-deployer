@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "/nexus/org/acumos/a3aa7df6-14d1-477f-ae22-de47374251ac/newstrainer/1.0.0/newstrainer-1.0.0.proto",
+    "method": "GET",
+    "basicAuth": {
+      "username": "acumos_rw",
+      "password": "test"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": "syntax = \"proto3\";\n\nmessage Empty {\n}\n\nmessage TrainingConfig {\n  string training_data_filename = 1; // .npz file\n  string training_labels_filename = 2; // .npz file\n  int32 epochs = 3;\n  int32 batch_size = 4;\n  double validation_ratio = 5;\n  string model_filename = 6;\n}\n\nservice NewsTrainer {\n  rpc startTraining(Empty) returns(TrainingConfig);\n}\n",
+    "headers": {
+      "Content-Type": "text/plain"
+    }
+  }
+}

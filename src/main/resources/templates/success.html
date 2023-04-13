@@ -1,0 +1,48 @@
+<style>
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  font-family: UniSansRegular;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+body {
+  background-color: #333;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+td {
+  text-align: left;
+}
+
+</style>
+
+<div>
+    <img th:src="@{/images/creodias-logo.png}"/>
+
+    <div class="container">
+        <h2>Deployment successful</h2>
+        <table>
+            <tr>
+                <th>Service</th>
+                <th>Web UI URL</th>
+            </tr>
+            <tr th:each="service: ${services}">
+                <td th:text="${service.name}" />
+                <td>
+                    <a th:href="${service.url}" th:text="${service.url}" target="_blank" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "/nexus/org/acumos/adba1c6e-8c95-4eaf-acfa-7b9827cf42d6/newsclassifier/1.0.0/newsclassifier-1.0.0.proto",
+    "method": "GET",
+    "basicAuth": {
+      "username": "acumos_rw",
+      "password": "test"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": "syntax = \"proto3\";\n\nmessage TrainingConfig {\n  string training_data_filename = 1; // .npz file\n  string training_labels_filename = 2; // .npz file\n  int32 epochs = 3;\n  int32 batch_size = 4;\n  double validation_ratio = 5;\n  string model_filename = 6;\n}\n\nmessage TrainingStatus {\n  double accuracy = 1;\n  double validation_loss = 2;\n  string status_text = 3;\n}\n\nmessage NewsText {\n  string text = 1;\n}\n\nmessage NewsCategory {\n  int32 category_code = 1;\n  string category_text = 2;\n}\n\nservice NewsClassifier {\n  rpc startTraining(TrainingConfig) returns(TrainingStatus);\n  rpc classify(NewsText) returns(NewsCategory);\n}",
+    "headers": {
+      "Content-Type": "text/plain"
+    }
+  }
+}

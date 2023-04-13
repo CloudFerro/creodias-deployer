@@ -1,0 +1,57 @@
+{
+  "request": {
+    "url": "/ccds/revision/efe8ef3d-0d79-4347-abd7-c675411e9b50/artifact",
+    "method": "GET",
+    "basicAuth": {
+      "username": "ccds_client",
+      "password": "test"
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "created": "2022-09-19T13:57:34Z",
+        "modified": "2022-09-19T13:57:34Z",
+        "artifactId": "38a484fb-e9da-4ef9-a1b3-241567ad64be",
+        "version": "1.0.0",
+        "artifactTypeCode": "BP",
+        "name": "BluePrint-b979dabb-b461-47ae-8459-37b3f4be8851",
+        "description": "BluePrint File for : news-training-pi for SolutionID : b979dabb-b461-47ae-8459-37b3f4be8851 with version : 1.0.0",
+        "uri": "org/acumos/b979dabb-b461-47ae-8459-37b3f4be8851/3805e042-4e9f-4ac7-97f4-d82153338f97/BLUEPRINT-B979DABB-B461-47AE-8459-37B3F4BE8851/1.0.0/BLUEPRINT-B979DABB-B461-47AE-8459-37B3F4BE8851-1.0.0.json",
+        "size": 2795,
+        "metadata": null,
+        "userId": "d9e01c89-520f-42ef-8d83-00bf2cbf13ba"
+      },
+      {
+        "created": "2022-09-19T13:57:31Z",
+        "modified": "2022-09-19T13:57:31Z",
+        "artifactId": "8ae01612-e980-4d41-b528-a19b75c97fca",
+        "version": "1.0.0",
+        "artifactTypeCode": "CD",
+        "name": "acumos-cdump-b979dabb-b461-47ae-8459-37b3f4be8851",
+        "description": "Cdump File for : acumos-cdump-b979dabb-b461-47ae-8459-37b3f4be8851 for SolutionID : b979dabb-b461-47ae-8459-37b3f4be8851 with version : 1.0.0",
+        "uri": "org/acumos/b979dabb-b461-47ae-8459-37b3f4be8851/efe8ef3d-0d79-4347-abd7-c675411e9b50/ACUMOS-CDUMP-B979DABB-B461-47AE-8459-37B3F4BE8851/1.0.0/ACUMOS-CDUMP-B979DABB-B461-47AE-8459-37B3F4BE8851-1.0.0.json",
+        "size": 8482,
+        "metadata": null,
+        "userId": "d9e01c89-520f-42ef-8d83-00bf2cbf13ba"
+      },
+      {
+        "created": "2022-09-19T14:01:17Z",
+        "modified": "2022-09-19T14:01:17Z",
+        "artifactId": "c9f6b7ce-08d5-465e-9b1e-2ef0d011a13b",
+        "version": "1.0.0",
+        "artifactTypeCode": "LI",
+        "name": "license.json",
+        "description": "license.json",
+        "uri": "org/acumos/b979dabb-b461-47ae-8459-37b3f4be8851/license/1.0.0/license-1.0.0.json",
+        "size": 519,
+        "metadata": null,
+        "userId": "d9e01c89-520f-42ef-8d83-00bf2cbf13ba"
+      }
+    ],
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

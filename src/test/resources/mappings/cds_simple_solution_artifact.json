@@ -1,0 +1,96 @@
+{
+  "request": {
+    "url": "/ccds/revision/7220ac2a-a908-46df-a58d-bad87bbbad23/artifact",
+    "method": "GET",
+    "basicAuth": {
+      "username": "ccds_client",
+      "password": "test"
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "created": "2023-01-04T12:22:43Z",
+        "modified": "2023-01-04T12:22:43Z",
+        "artifactId": "12347186-51c1-4bed-93b5-7d5fafdd7769",
+        "version": "1.0.2",
+        "artifactTypeCode": "LG",
+        "name": "AdvancedModelOnboardLog.txt",
+        "description": "AdvancedModelOnboardLog.txt",
+        "uri": "org/acumos/e3794e16-0225-4bf1-a99c-b99638a22232/OnboardingLog/1.0.2/OnboardingLog-1.0.2.txt",
+        "size": 8099,
+        "metadata": null,
+        "userId": "6d000a76-a811-4182-9992-5328661f4933"
+      },
+      {
+        "created": "2023-01-04T12:22:43Z",
+        "modified": "2023-01-04T12:22:43Z",
+        "artifactId": "3250942b-5cf3-4d4d-bdd1-0bbcd5b56b29",
+        "version": "1.0.2",
+        "artifactTypeCode": "PJ",
+        "name": "PROTOBUF",
+        "description": "Tosca file : PROTOBUF for SolutionID : e3794e16-0225-4bf1-a99c-b99638a22232 with version : 1.0.2",
+        "uri": "org/acumos/e3794e16-0225-4bf1-a99c-b99638a22232/7220ac2a-a908-46df-a58d-bad87bbbad23/TOSCAPROTOBUF/1.0.2/TOSCAPROTOBUF-1.0.2.json",
+        "size": 1205,
+        "metadata": null,
+        "userId": "6d000a76-a811-4182-9992-5328661f4933"
+      },
+      {
+        "created": "2023-01-04T12:22:43Z",
+        "modified": "2023-01-04T12:22:43Z",
+        "artifactId": "7712df65-71c2-4995-9106-d5b288537323",
+        "version": "1.0.2",
+        "artifactTypeCode": "TG",
+        "name": "TGIF",
+        "description": "Tosca file : TGIF for SolutionID : e3794e16-0225-4bf1-a99c-b99638a22232 with version : 1.0.2",
+        "uri": "org/acumos/e3794e16-0225-4bf1-a99c-b99638a22232/7220ac2a-a908-46df-a58d-bad87bbbad23/TOSCATGIF/1.0.2/TOSCATGIF-1.0.2.json",
+        "size": 1343,
+        "metadata": null,
+        "userId": "6d000a76-a811-4182-9992-5328661f4933"
+      },
+      {
+        "created": "2023-01-04T12:22:42Z",
+        "modified": "2023-01-04T12:22:42Z",
+        "artifactId": "a04beca9-da15-4674-89b9-9320c032c7ad",
+        "version": "1.0.2",
+        "artifactTypeCode": "DI",
+        "name": "entityrecognizer",
+        "description": "hub.cc-asp.fraunhofer.de/ai4media-public/named-entity-recognition-flair:1.0.0",
+        "uri": "hub.cc-asp.fraunhofer.de/ai4media-public/named-entity-recognition-flair:1.0.0",
+        "size": -1,
+        "metadata": null,
+        "userId": "6d000a76-a811-4182-9992-5328661f4933"
+      },
+      {
+        "created": "2023-01-04T12:22:43Z",
+        "modified": "2023-01-04T12:22:43Z",
+        "artifactId": "ad8d0ce8-8614-4ebb-a7b0-d6002ad22723",
+        "version": "1.0.2",
+        "artifactTypeCode": "LI",
+        "name": "license.json",
+        "description": "license.json",
+        "uri": "org/acumos/e3794e16-0225-4bf1-a99c-b99638a22232/license/1.0.2/license-1.0.2.json",
+        "size": 494,
+        "metadata": null,
+        "userId": "6d000a76-a811-4182-9992-5328661f4933"
+      },
+      {
+        "created": "2023-01-04T12:22:43Z",
+        "modified": "2023-01-04T12:22:43Z",
+        "artifactId": "fc086f81-6de7-4f67-8c1c-03718bc31efb",
+        "version": "1.0.2",
+        "artifactTypeCode": "MI",
+        "name": "ner.proto",
+        "description": "ner.proto",
+        "uri": "org/acumos/e3794e16-0225-4bf1-a99c-b99638a22232/entityrecognizer/1.0.2/entityrecognizer-1.0.2.proto",
+        "size": 400,
+        "metadata": null,
+        "userId": "6d000a76-a811-4182-9992-5328661f4933"
+      }
+    ],
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}
