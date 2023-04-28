@@ -1,13 +1,16 @@
-# Playground-Deployer
+# CREODIAS-Deployer
 
 ## Introduction
+This project is a deployment service for [Eclipse Graphene](https://gitlab.eclipse.org/eclipse/graphene) project. It enables automated deployments of experiments 
+to Kubernates clusters running in [CREODIAS](https://creodias.eu) platform managed with [Openstack Magnum](https://creodias.eu/-/how-to-create-a-kubernetes-cluster-using-creodias-openstack-magnum). 
+
 The architecture of Graphene is designed to support the integration of many different 
 deployment services for execution environments. Each deployment service is a separate 
 microservice running inside the Graphene cluster transforming the pipeline 
 definition into deployment artifacts. 
 
-CREODIAS deployer is an implementation of such deployment service. It uses Kubernates API in order to deploy solution 
-to a remote cluster running in CREODIAS cloud infrastructure.
+CREODIAS deployer, originally based on [playground deployer](https://gitlab.eclipse.org/eclipse/graphene/playground-deployer), is an implementation of such deployment service. It uses Kubernates API in order to deploy solution 
+to a remote cluster running in CREODIAS cloud infrastructure. Since the deployer is meant to be run in AI4EU experiments environment target Kubernetes clusters need to expose API publicly to enable communication across the Internet.
 
 CREODIAS deployment service takes the following cases into account:
 * the solution can be just a single model (= only one node)
