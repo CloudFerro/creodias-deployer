@@ -76,7 +76,6 @@ bootJar {
 task copyTask(type: Copy) {
 	dependsOn bootJar
 	from 'deploy'
-	from 'docs/deployment-readme.txt'
 	from "${buildDir}/libs"
 	into 'build/docker'
 }
@@ -90,24 +89,16 @@ import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
 import com.bmuschko.gradle.docker.tasks.image.DockerPushImage
 import com.bmuschko.gradle.docker.tasks.image.Dockerfile
 
-task createPlaygroundDockerfile(type: Dockerfile) {
+task createDockerfile(type: Dockerfile) {
 	dependsOn copyTask
 	from 'eclipse-temurin:17-jre'
-	addFile "private/kubernetes-client-script.py", "/maven/home/deploy/private/kubernetes-client-script.py"
-	addFile "deployment-readme.txt", "/maven/home/docs/deployment-readme.txt"
-	addFile "private/orchestrator_client/orchestrator_client.py", "/maven/home/deploy/private/orchestrator_client/orchestrator_client.py"
-	addFile "private/orchestrator_client/status_client.py", "/maven/home/deploy/private/orchestrator_client/status_client.py"
-	addFile "private/orchestrator_client/orchestrator_pb2_grpc.py", "/maven/home/deploy/private/orchestrator_client/orchestrator_pb2_grpc.py"
-	addFile	"private/orchestrator_client/orchestrator_pb2.py", "/maven/home/deploy/private/orchestrator_client/orchestrator_pb2.py"
-	addFile	"private/protobuf/orchestrator.proto", "/maven/home/deploy/private/protobuf/orchestrator.proto"
-	addFile	"private/requirements.txt", "/maven/home/deploy/private/requirements.txt"
 	addFile "${project.name}-${project.version}.jar", "maven/${project.name}-${project.version}.jar"
 }
 
 def image_list = []
 
-task createPlaygroundImage(type: DockerBuildImage) {
-	dependsOn createPlaygroundDockerfile
+task createImage(type: DockerBuildImage) {
+	dependsOn createDockerfile
 
 	docker {
 		springBootApplication {
@@ -123,8 +114,8 @@ task createPlaygroundImage(type: DockerBuildImage) {
 	image_list = images
 }
 
-task pushPlaygroundImage(type: DockerPushImage) {
-	dependsOn createPlaygroundImage
+task pushImage(type: DockerPushImage) {
+	dependsOn createImage
 	images = image_list
 	registryCredentials {
 		username = System.properties['docker.username']
