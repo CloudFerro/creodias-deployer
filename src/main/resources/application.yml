@@ -1,7 +1,7 @@
 server:
   port: 8125
   servlet:
-    context-path: /creodias-deployer
+    context-path: /
 
 common-data-service:
   user: "ccds_client"
